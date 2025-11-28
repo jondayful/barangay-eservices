@@ -61,7 +61,7 @@ exports.getAllRequests = async (req, res) => {
     const requests = await Request.findAll({
       include: [
         { model: User, attributes: ["firstName", "lastName", "email"] },
-      ], // Join with User table
+      ],
       order: [["createdAt", "DESC"]],
     });
     res.json(requests);

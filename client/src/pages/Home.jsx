@@ -1,18 +1,15 @@
 import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import { FileText, Shield, ArrowRight, CheckCircle, Users } from "lucide-react";
 
 export default function Home() {
   const navigate = useNavigate();
 
-  // Smart Navigation Handler
   const handleStartRequest = () => {
     const token = localStorage.getItem("token");
     if (token) {
-      // If logged in, go straight to dashboard
       navigate("/dashboard");
     } else {
-      // If not logged in, go to login
       navigate("/login");
     }
   };
@@ -47,7 +44,7 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {/* UPDATED BUTTON: Uses onClick instead of Link */}
+            {/* Link */}
             <button
               onClick={handleStartRequest}
               className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition shadow-lg shadow-blue-600/25 hover:-translate-y-1 cursor-pointer"
@@ -146,7 +143,7 @@ export default function Home() {
                 assistance, and legal aid.
               </p>
 
-              {/* UPDATED BUTTON: Uses the same handler */}
+              {/* Handler */}
               <button
                 onClick={handleStartRequest}
                 className="block w-full text-center bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl font-semibold transition cursor-pointer"
@@ -182,9 +179,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- HOW IT WORKS & FOOTER (Keep as is) --- */}
-      {/* (I kept the rest of the code brief here as it doesn't need changing, 
-          but ensure you keep the Timeline and Footer sections in your file!) */}
       <section className="py-24 bg-white border-t border-slate-200">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">

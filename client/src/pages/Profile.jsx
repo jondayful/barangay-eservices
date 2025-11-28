@@ -48,7 +48,6 @@ export default function Profile() {
     }
 
     try {
-      // Send only the necessary data
       const updateData = {
         firstName: formData.firstName,
         lastName: formData.lastName,
@@ -60,15 +59,12 @@ export default function Profile() {
       await updateUserProfile(updateData);
       alert("Profile Updated Successfully!");
 
-      // Clear password fields for security
       setFormData((prev) => ({ ...prev, password: "", confirmPassword: "" }));
 
-      // Update local storage user name if changed
       const currentUser = JSON.parse(localStorage.getItem("user"));
       currentUser.firstName = formData.firstName;
       localStorage.setItem("user", JSON.stringify(currentUser));
 
-      // Optional: Refresh page or notify navbar to update name
       window.location.reload();
     } catch (err) {
       alert("Update failed.");

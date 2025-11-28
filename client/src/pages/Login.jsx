@@ -7,12 +7,12 @@ export default function Login() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(""); // 1. New Error State
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError(""); // Clear previous errors
+    setError("");
 
     try {
       const { data } = await loginUser(formData);
@@ -26,7 +26,6 @@ export default function Login() {
         navigate("/dashboard");
       }
     } catch (err) {
-      // 2. Set error state instead of alert
       setError(err.response?.data?.message || "Invalid email or password.");
     } finally {
       setLoading(false);

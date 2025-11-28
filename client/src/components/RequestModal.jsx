@@ -19,17 +19,14 @@ export default function RequestModal({ isOpen, onClose, onSuccess }) {
   const [loading, setLoading] = useState(false);
   const [dateConstraints, setDateConstraints] = useState({ min: "", max: "" });
 
-  // Calculate Date Limits when modal opens
   useEffect(() => {
     if (isOpen) {
       const today = new Date();
 
-      // Min Date: Tomorrow (Today + 1 day)
       const minDateObj = new Date(today);
       minDateObj.setDate(today.getDate() + 1);
       const minStr = minDateObj.toISOString().split("T")[0];
 
-      // Max Date: 1 Month from today
       const maxDateObj = new Date(today);
       maxDateObj.setMonth(today.getMonth() + 1);
       const maxStr = maxDateObj.toISOString().split("T")[0];
@@ -137,7 +134,7 @@ export default function RequestModal({ isOpen, onClose, onSuccess }) {
               </div>
             </div>
 
-            {/* Pickup Date (UPDATED LOGIC) */}
+            {/* Pickup Date */}
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">
                 Preferred Pickup Date
@@ -150,8 +147,8 @@ export default function RequestModal({ isOpen, onClose, onSuccess }) {
                   type="date"
                   className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-700"
                   value={formData.pickup}
-                  min={dateConstraints.min} // Prevents selecting today or past
-                  max={dateConstraints.max} // Prevents selecting > 1 month away
+                  min={dateConstraints.min}
+                  max={dateConstraints.max}
                   onChange={(e) =>
                     setFormData({ ...formData, pickup: e.target.value })
                   }

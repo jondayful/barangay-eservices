@@ -23,7 +23,7 @@ export default function Register() {
     address: "",
   });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(""); // New Error State
+  const [error, setError] = useState("");
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -35,8 +35,7 @@ export default function Register() {
 
     try {
       await registerUser(formData);
-      // Optional: You can navigate to login with a "success" state if you want
-      alert("Registration Successful! Please Login."); // We can keep success alert or redirect directly
+      alert("Registration Successful! Please Login.");
       navigate("/login");
     } catch (err) {
       setError(
@@ -78,7 +77,6 @@ export default function Register() {
         )}
 
         <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-4">
-          {/* ... (Keep the rest of your form fields exactly the same) ... */}
           <div className="md:col-span-1 space-y-4">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">

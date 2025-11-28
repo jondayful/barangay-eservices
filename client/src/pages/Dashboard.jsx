@@ -37,7 +37,6 @@ export default function Dashboard() {
     }
   };
 
-  // Calculate Stats
   const stats = {
     total: requests.length,
     pending: requests.filter((r) => r.status === "pending").length,
@@ -46,7 +45,6 @@ export default function Dashboard() {
     ).length,
   };
 
-  // Filter Logic
   const filteredRequests = requests.filter((req) => {
     if (filter === "all") return true;
     if (filter === "pending") return req.status === "pending";
@@ -173,7 +171,6 @@ export default function Dashboard() {
             <p className="text-slate-500">Loading your requests...</p>
           </div>
         ) : filteredRequests.length === 0 ? (
-          // Empty State
           <div className="bg-white rounded-2xl border border-dashed border-slate-300 p-12 text-center">
             <div className="w-16 h-16 bg-slate-50 text-slate-300 rounded-full flex items-center justify-center mx-auto mb-4">
               <FileText size={32} />
@@ -192,7 +189,6 @@ export default function Dashboard() {
             </button>
           </div>
         ) : (
-          // Grid of Cards
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredRequests.map((req) => (
               <div

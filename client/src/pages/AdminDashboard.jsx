@@ -23,7 +23,6 @@ export default function AdminDashboard() {
     fetchAllRequests();
   }, []);
 
-  // Filter logic whenever requests or filterStatus changes
   useEffect(() => {
     if (filterStatus === "all") {
       setFilteredRequests(requests);
@@ -56,7 +55,6 @@ export default function AdminDashboard() {
     navigate("/login");
   };
 
-  // Stats for the top cards
   const stats = {
     pending: requests.filter((r) => r.status === "pending").length,
     approved: requests.filter((r) => r.status === "approved").length,
