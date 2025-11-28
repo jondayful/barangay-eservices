@@ -1,8 +1,3 @@
-Here is a professional and comprehensive **README.md** for your project. This document guides new developers (or your future self) on how to install, configure, and run the application.
-
-Create a file named **`README.md`** in your root folder (`barangay-eservices/`) and paste this content:
-
-````markdown
 # 🏛️ BarangayConnect: E-Services Portal
 
 **BarangayConnect** is a modern, full-stack web application designed to digitize local government services. It allows residents to request official documents (Clearances, Certificates of Indigency, Residency) online, track their status, and receive email notifications.
@@ -64,6 +59,7 @@ Ensure you have the following installed:
 git clone [https://github.com/yourusername/barangay-eservices.git](https://github.com/yourusername/barangay-eservices.git)
 cd barangay-eservices
 ```
+
 ````
 
 ### 3\. Database Setup
@@ -188,3 +184,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ```
 
 ```
+````
