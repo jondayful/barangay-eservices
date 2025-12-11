@@ -60,17 +60,13 @@ git clone [https://github.com/yourusername/barangay-eservices.git](https://githu
 cd barangay-eservices
 ```
 
-````
-
-### 3\. Database Setup
+### 3. Database Setup
 
 1.  Open your MySQL tool (phpMyAdmin or Workbench).
 2.  Create a new empty database named: `barangay_eservices_db`
-3.  _(The tables will be automatically created by Sequelize when you start the server)._
+3.  The tables will be automatically created by Sequelize when you start the server
 
----
-
-### 4\. Backend Setup
+### 4. Backend Setup
 
 Navigate to the server folder and install dependencies:
 
@@ -111,7 +107,7 @@ _You should see: `✅ Database & Tables synced!`_
 
 ---
 
-### 5\. Frontend Setup
+### 5. Frontend Setup
 
 Open a new terminal, navigate to the client folder, and install dependencies:
 
@@ -184,4 +180,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ```
 
 ```
-````
+
+```
+
+```
